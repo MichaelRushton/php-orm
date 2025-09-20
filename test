@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+trap "exit" INT
+
+for version in 8.4; do
+
+    image=michaelrushton/php-orm:php$version
+
+    if [[ "$(docker images -q $image 2> /dev/null)" == "" ]]; then
+        docker build -t $image --build-arg PHP_VERSION=$version .
+    fi
+
+    echo -e "\033[0;33mTesting PHP $version\033[0m"
+
+    args=$@
+
+    docker run --rm -it -u $(id -u):$(id -g) -v $(pwd):/mnt -w /mnt composer/composer sh -c "composer install"
+    docker run --rm -it -u $(id -u):$(id -g) -v $(pwd):/mnt -w /mnt $image sh -c "XDEBUG_MODE=coverage vendor/bin/pest $args"
+
+done

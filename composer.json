@@ -1,0 +1,27 @@
+{
+  "name": "michaelrushton/orm",
+  "description": "A library to extend https://github.com/MichaelRushton/php-db with an ORM.",
+  "license": "MIT",
+  "require": {
+    "php": "^8.4",
+    "michaelrushton/db": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "MichaelRushton\\ORM\\": "src/"
+    }
+  },
+  "require-dev": {
+    "pestphp/pest": "^4.1"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
