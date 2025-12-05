@@ -6,4 +6,6 @@ namespace MichaelRushton\ORM\Exceptions;
 
 use LogicException;
 
-class EntityMissingPrimaryKeyValueException extends LogicException {}
+class EntityMissingPrimaryKeyValueException extends LogicException
+{
+}

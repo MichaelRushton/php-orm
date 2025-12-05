@@ -6,4 +6,6 @@ namespace MichaelRushton\ORM\Exceptions;
 
 use RuntimeException;
 
-class EntityNotFoundException extends RuntimeException {}
+class EntityNotFoundException extends RuntimeException
+{
+}

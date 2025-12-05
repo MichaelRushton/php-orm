@@ -6,4 +6,6 @@ namespace MichaelRushton\ORM\Exceptions;
 
 use LogicException;
 
-class EntityMissingTableAttributeException extends LogicException {}
+class EntityMissingTableAttributeException extends LogicException
+{
+}

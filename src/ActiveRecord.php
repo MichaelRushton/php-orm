@@ -17,7 +17,8 @@ abstract class ActiveRecord implements ActiveRecordInterface
 
     public function __construct(
         protected array $attributes = []
-    ) {}
+    ) {
+    }
 
     public static function setEntityManager(EntityManagerInterface $entity_manager): void
     {

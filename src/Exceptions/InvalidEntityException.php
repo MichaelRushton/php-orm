@@ -6,4 +6,6 @@ namespace MichaelRushton\ORM\Exceptions;
 
 use LogicException;
 
-class InvalidEntityException extends LogicException {}
+class InvalidEntityException extends LogicException
+{
+}

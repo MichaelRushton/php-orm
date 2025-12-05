@@ -63,8 +63,7 @@ class Query implements QueryInterface, HasBindings, Stringable
     public function __construct(
         public readonly ConnectionInterface $connection,
         public readonly DataMapper $data_mapper
-    )
-    {
+    ) {
         $this->table = $data_mapper->table();
     }
 
@@ -115,7 +114,8 @@ class Query implements QueryInterface, HasBindings, Stringable
 
     }
 
-    public function yield(): Generator {
+    public function yield(): Generator
+    {
 
         if ($stmt = $this->connection()->execute("$this", $this->bindings())) {
 
